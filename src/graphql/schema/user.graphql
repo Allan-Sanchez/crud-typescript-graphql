@@ -1,8 +1,21 @@
 type User {
   id: ID
   name: String
+  email: String
   age: Int
+  password: String
 }
-type Query{
-    helloUser:String
+input UserInput {
+  name: String!
+  email: String!
+  age: Int!
+  password: String!
+}
+type Query {
+  helloUser: String
+  getUsers: [User]
+}
+
+type Mutation {
+  newUser(input: UserInput): User!
 }
