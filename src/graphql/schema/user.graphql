@@ -11,11 +11,19 @@ input UserInput {
   age: Int!
   password: String!
 }
+input UserInputUpdate {
+  name: String
+  email: String
+  age: Int
+  password: String
+}
 type Query {
-  helloUser: String
   getUsers: [User]
+  getUser(id: ID!): User!
 }
 
 type Mutation {
   newUser(input: UserInput): User!
+  updateUser(id: ID!, input: UserInputUpdate): User
+  deleteUser(id: ID!): String
 }
