@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/main.js",
     "dev": "nodemon src/main.ts --exec ts-node src/main.ts -e ts,graphql"
   },
   "author": "Allan Sanchez",
